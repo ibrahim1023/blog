@@ -21,8 +21,39 @@ For a Vue frontend, use: `ignite scaffold vue`
 For a React frontend, use: `ignite scaffold react`
 These commands can be run within your scaffolded blockchain project. 
 
-
 For more information see the [monorepo for Ignite front-end development](https://github.com/ignite/web).
+
+## Interacting with the blockchain
+
+### Create a Post
+
+```
+blogd tx blog create-post hello world --from alice --chain-id blog
+```
+
+### View a Post
+
+```
+blogd q blog show-post 0
+```
+
+### List all Posts
+
+```
+blogd q blog list-post
+```
+
+### Update a Post
+
+```
+blogd tx blog update-post "Hello" "Cosmos" 0 --from alice --chain-id blog
+```
+
+### Delete a Post
+
+```
+blogd tx blog delete-post 0 --from alice  --chain-id blog
+```
 
 ## Release
 To release a new version of your blockchain, create and push a new tag with `v` prefix. A new draft release with the configured targets will be created.
